@@ -109,7 +109,7 @@ module.exports = (() => {
                 id: 'giftButton',
                 name: 'Remove Gift/Boost Button',
                 note: 'Removes the Gift Nitro/Boost Server button from the chat.',
-                value: false,
+                value: true,
             },
             {
                 type: 'switch',
@@ -205,7 +205,7 @@ module.exports = (() => {
                         id: 'boostBar',
                         name: 'Remove Boost Bar',
                         note: 'Removes the boost progress bar from the channel list.',
-                        value: false,
+                        value: true,
                     },
                     {
                         type: 'switch',
