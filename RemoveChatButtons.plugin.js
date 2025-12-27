@@ -109,7 +109,7 @@ module.exports = (() => {
                 id: 'giftButton',
                 name: 'Remove Gift/Boost Button',
                 note: 'Removes the Gift Nitro/Boost Server button from the chat.',
-                value: true,
+                value: false,
             },
             {
                 type: 'switch',
@@ -205,7 +205,7 @@ module.exports = (() => {
                         id: 'boostBar',
                         name: 'Remove Boost Bar',
                         note: 'Removes the boost progress bar from the channel list.',
-                        value: true,
+                        value: false,
                     },
                     {
                         type: 'switch',
@@ -314,23 +314,23 @@ module.exports = (() => {
                 return classString ? '.' + classString.replace(/ /g, '.') : '';
             };
 
-            const buttonClasses = getModule(Filters.byProps('emojiButton', 'stickerButton'));
+            const buttonClasses = getModule(Filters.byKeys('emojiButton', 'stickerButton'));
             const channelTextAreaSelector = toSelector(buttonClasses.channelTextArea);
             const emojiButtonSelector = toSelector(buttonClasses.emojiButton);
             const stickerButtonSelector = toSelector(buttonClasses.stickerButton);
             const attachButtonSelector = toSelector(buttonClasses.attachButton);
 
-            const messageActionButtonsClass = getModule(Filters.byProps('buttons', 'cozyMessage'))?.buttons;
+            const messageActionButtonsClass = getModule(Filters.byKeys('buttons', 'cozyMessage'))?.buttons;
             const messageActionButtonsSelector = toSelector(messageActionButtonsClass);
 
-            const privateChannelsClass = getModule(Filters.byProps('privateChannels'))?.privateChannels;
+            const privateChannelsClass = getModule(Filters.byKeys('privateChannels'))?.privateChannels;
             const privateChannelsSelector = toSelector(privateChannelsClass);
-            const communityInfoPillClass = getModule(Filters.byProps('communityInfoPill'))?.communityInfoPill;
+            const communityInfoPillClass = getModule(Filters.byKeys('communityInfoPill'))?.communityInfoPill;
             const communityInfoPillSelector = toSelector(communityInfoPillClass);
-            const iconItemClass = getModule(Filters.byProps('iconBase', 'iconItem'))?.iconItem;
+            const iconItemClass = getModule(Filters.byKeys('iconBase', 'iconItem'))?.iconItem;
             const iconItemSelector = toSelector(iconItemClass);
 
-            const voiceActionButtonsClass = getModule(Filters.byProps('actionButtons', 'voiceUsers'))?.actionButtons;
+            const voiceActionButtonsClass = getModule(Filters.byKeys('actionButtons', 'voiceUsers'))?.actionButtons;
             const voiceActionButtonsSelector = toSelector(voiceActionButtonsClass);
 
             const getCssRule = (selector) => `${selector} { display: none !important; }`;
